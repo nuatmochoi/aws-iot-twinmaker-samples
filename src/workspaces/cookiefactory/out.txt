@@ -1,0 +1,20 @@
+{
+    "propertyValues": [
+        {
+            "entityPropertyReference": {
+                "componentName": "rateEquipment",
+                "externalIdProperty": {},
+                "entityId": "INSPECTOR_POST_FREEZER_TUNNEL_999d8796-55f1-4791-af53-fc210038686f",
+                "propertyName": "State"
+            },
+            "values": [
+                {
+                    "timestamp": -2209046400.0,
+                    "value": {
+                        "stringValue": "Down"
+                    }
+                }
+            ]
+        }
+    ]
+}

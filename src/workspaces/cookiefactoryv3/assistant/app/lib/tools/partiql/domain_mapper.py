@@ -157,7 +157,7 @@ def get_domain_mapper_chain(**kwargs):
 
 # TODO: replace hardcoded schema with schema extracted from component types, entities and relationships
 user_schema = """
-Entities can be any of the following: COOKIE_LINE, FREEZER_TUNNEL, CONVEYOR, VERTICAL_CONVEYOR, COOKIE_FORMER, BOX_ERECTOR
+Entities can be any of the following: COOKIE_LINE(쿠키 라인), FREEZER_TUNNEL(프리저 터널), CONVEYOR(컨베이어), VERTICAL_CONVEYO(수직 컨베이어), COOKIE_FORMER(쿠키 포머), BOX_ERECTOR(박스 이렉터)
 Entity Properties can be any of the following: manufacturer date,
 Relationship Names can be any of the following: feed, isLocationOf
 """

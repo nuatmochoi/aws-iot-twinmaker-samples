@@ -238,7 +238,7 @@ export function PaneView({
                     </div>
                   ) : (
                     <div data-empty-state>
-                      <div data-title>You&#8217;re all caught up!</div>
+                      <div data-title>공정을 선택해주세요.</div>
                       <div data-message>No data available</div>
                     </div>
                   )}
@@ -327,7 +327,7 @@ function Chrome({ handleSimulationClick }: { handleSimulationClick?: () => void 
       </div>
       <SiteMenu />
       <button data-button data-is-locked={!handleSimulationClick} onPointerUp={handleSimulationClick}>
-        Run event simulation
+        이벤트 시뮬레이터 실행
       </button>
       <Clock />
       <UserMenu />

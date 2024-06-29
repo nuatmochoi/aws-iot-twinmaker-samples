@@ -49,10 +49,15 @@ sleep 10
 # create workspace
 aws iottwinmaker create-workspace --cli-input-json '{"role": "'$TWINMAKER_ROLE_ARN'","s3Location": "arn:aws:s3:::'$WS_S3_BUCKET'","workspaceId": "'$WORKSPACE_ID'"}' --region $AWS_DEFAULT_REGION >> /dev/null
 
+# cdk diff \
+#     --context stackName="${CFN_STACK_NAME}" \
+#     --context iottwinmakerWorkspaceId="$WORKSPACE_ID" \
+#     --context iottwinmakerWorkspaceBucket="$WS_S3_BUCKET"
+
 cdk deploy \
     --context stackName="${CFN_STACK_NAME}" \
     --context iottwinmakerWorkspaceId="$WORKSPACE_ID" \
-    --context iottwinmakerWorkspaceBucket="$WS_S3_BUCKET" --require-approval never
+    --context iottwinmakerWorkspaceBucket="$WS_S3_BUCKET" --require-approval never --outputs-file outputs.json
 
 # TODO fix in TmdtApp - handling for tiles assets
 aws s3 cp --recursive ../tmdt_project/3d_models/ s3://${WS_S3_BUCKET}

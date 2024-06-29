@@ -26,16 +26,16 @@ export class CdkStack extends Stack {
       layers: [
         new PythonLayerVersion(this, 'udq_utils_layer', {
           entry: path.join(__dirname, '..', '..', '..', '..', 'libs', 'udq_helper_utils'),
-          compatibleRuntimes: [lambda.Runtime.PYTHON_3_10],
+          compatibleRuntimes: [lambda.Runtime.PYTHON_3_9],
         }),
       ],
       handler: "lambda_handler",
       index: 'udq_data_reader.py',
       memorySize: 256,
       role: s3UdqRole,
-      runtime: lambda.Runtime.PYTHON_3_10,
+      runtime: lambda.Runtime.PYTHON_3_9,
       timeout: Duration.minutes(15),
-      logRetention: logs.RetentionDays.ONE_DAY,
+      // logRetention: logs.RetentionDays.ONE_DAY,
       environment: {}
     });
     new CfnOutput(this, "S3ReaderUDQLambdaArn", {value: s3ReaderUDQ.functionArn});

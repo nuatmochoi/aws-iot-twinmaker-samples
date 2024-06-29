@@ -67,7 +67,7 @@ export function GenAiView({
 
   return (
     <main className={createClassName(styles.root, className)} {...props}>
-      <section data-head>Cookie Factory Assistant</section>
+      <section data-head>제과 공장 어시스턴트</section>
       <section data-chainlit>
         <iframe data-iframe ref={iframeRef} src={iframeUrl}></iframe>
       </section>

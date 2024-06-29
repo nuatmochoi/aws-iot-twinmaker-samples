@@ -53,9 +53,9 @@ export const simulationTriggerConfig = {
 
 export const triggerEventData = {
   event_id: '98765',
-  event_timestamp: '2023-11-02T15:21:58.900Z',
-  event_title: 'Cookie Shape Anomaly Detected',
-  event_description: 'The number of deformed cookies exceeded 11 per 5 minutes.',
+  event_timestamp: '2024-06-27T00:00:00Z',
+  event_title: '쿠키 모양 이상 감지',
+  event_description: '5분당 변형된 쿠키 수 10개 초과',
   event_entity_id: 'INSPECTOR_POST_FREEZER_TUNNEL_999d8796-55f1-4791-af53-fc210038686f'
 };
 
@@ -120,14 +120,14 @@ export const panelConfigs: PanelConfig[] = [
   {
     button: {
       icon: <NetworkIcon />,
-      label: 'Process'
+      label: '공정 프로세스'
     },
     element: (
       <ProcessPanel
         dashboardPanelId={dashboardPanelId}
         id={processPanelId}
         key={processPanelId}
-        label="Process"
+        label="공정 프로세스"
         overlayContent={(node) => <OverlayContent node={node} />}
       />
     ),
@@ -136,7 +136,7 @@ export const panelConfigs: PanelConfig[] = [
   {
     button: {
       icon: <DashboardIcon />,
-      label: 'Dashboard'
+      label: '대시보드'
     },
     element: (
       <DashboardPanel
@@ -148,7 +148,7 @@ export const panelConfigs: PanelConfig[] = [
         )}
         id={dashboardPanelId}
         key={dashboardPanelId}
-        label="Dashboard"
+        label="대시보드"
       />
     ),
     id: dashboardPanelId
@@ -207,7 +207,7 @@ const equipmentEntityConfigs: EntityConfig[] = [
             refId: crypto.randomUUID()
           },
           type: 'data',
-          unit: '°F'
+          unit: '°C'
         },
         {
           chartType: 'line',
@@ -300,7 +300,7 @@ const equipmentEntityConfigs: EntityConfig[] = [
             propertyName: 'Temperature'
           },
           type: 'data',
-          unit: '°F'
+          unit: '°C'
         },
         {
           chartType: 'line',
@@ -518,8 +518,8 @@ const appConfig: AppConfig = {
     {
       email: 'user@cookiefactory',
       password: '__FILL_IN__',
-      firstName: 'Spencer',
-      title: 'Line Operator',
+      firstName: '박지혁',
+      title: '공정 오퍼레이터(라인OP)',
       cognito: {
         clientId: '__FILL_IN__',
         identityPoolId: '__FILL_IN__',
@@ -529,8 +529,8 @@ const appConfig: AppConfig = {
       siteConfigs: [
         {
           id: crypto.randomUUID(),
-          name: 'Bakersville Central',
-          description: '1 Main Street, Bakersville, NC, USA',
+          name: '안성 제과 공장',
+          description: '경기도 안성시 기업단지로',
           events: {
             createEventMessage(entity) {
               let normalizedName = '';

@@ -20,8 +20,8 @@ const sites: Record<string, SiteConfig[]> = {
         workspaceId: '__FILL_IN__'
       },
       id: crypto.randomUUID(),
-      location: '1 Main Street, Bakersville, NC, USA',
-      name: 'Bakersville Central'
+      location: '안성시 쿠키 제조 공장',
+      name: '안성 제과 공장'
     }
   ]
 };

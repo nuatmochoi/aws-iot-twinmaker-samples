@@ -151,7 +151,7 @@ const EQUIPMENT_ENTITY_DATA: EntityData[] = [
         },
         threshold: { upper: -10, lower: -40 },
         type: 'data',
-        unit: '°F'
+        unit: '°C'
       }
     ],
     type: ENTITY_TYPES.Equipment
@@ -237,7 +237,7 @@ function getProperties(): ValueOf<EntityData, 'properties'> {
       },
       threshold: { upper: 50, lower: 15 },
       type: 'data',
-      unit: '°F'
+      unit: '°C'
     }
   ];
 }

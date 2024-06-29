@@ -1815,7 +1815,7 @@
                     "dataRows": [
                         {
                             "rowType": "Markdown",
-                            "content": "### Freezer Tunnel  \nSpeed: **${speed}** rpm  \nTemperature: **${temp}** °F  "
+                            "content": "### Freezer Tunnel  \nSpeed: **${speed}** rpm  \nTemperature: **${temp}** °C  "
                         }
                     ]
                 }
@@ -2433,7 +2433,7 @@
                     "dataRows": [
                         {
                             "rowType": "Markdown",
-                            "content": "Cookie Former: **${CookieFormerAnnotation}°F**"
+                            "content": "Cookie Former: **${CookieFormerAnnotation}°C**"
                         }
                     ]
                 }
@@ -2668,7 +2668,7 @@
                     "dataRows": [
                         {
                             "rowType": "Markdown",
-                            "content": "Box Sealer: **${BoxSealerAnnotation}** °F"
+                            "content": "Box Sealer: **${BoxSealerAnnotation}** °C"
                         }
                     ]
                 }

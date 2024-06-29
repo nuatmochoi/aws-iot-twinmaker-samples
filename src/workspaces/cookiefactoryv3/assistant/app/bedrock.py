@@ -32,13 +32,12 @@ print('done initializing vector db')
 
 
 welcome_message="""
-Hi, I'm the AI assistant of the Cookie Factory. I'm here to help you diagnose and resolve issues \
-with the cookie production line.
+안녕하세요. GS네오텍 AI 어시스턴트 "WiseN AI"입니다. 제과 공장의 생산 라인과 관련된 문제 진단과 해결을 도와드릴 수 있습니다.
 """
 
 welcome_message_with_event=welcome_message + """
 
-There is an ongoing event [#{event_id}](https://example.com/issue/{event_id}). Do you want to run an initial diagnosis of the issue?
+이벤트 [#{event_id}](https://example.com/issue/{event_id})가 발생했습니다. 문제에 대한 초기 진단을 실행하고 싶으신가요?
 """
 
 
@@ -84,7 +83,7 @@ async def on_action(action):
   event_description = context.session.user_data.get('event_description')
   event_timestamp = context.session.user_data.get('event_timestamp')
   
-  await cl.Message(content=f"Running event initial diagnosis...").send()
+  await cl.Message(content=f"이벤트 초기 진단 실행 중...").send()
   await action.remove()
   
   cb = cl.AsyncLangchainCallbackHandler()
@@ -106,7 +105,7 @@ async def on_action(action):
 async def on_action(action):
   event_entity_id = context.session.user_data.get('event_entity_id')
   if action.value == "3d":
-    await cl.Message(content=f"Navigating to the issue site.").send()
+    await cl.Message(content=f"문제 현장으로 이동합니다.").send()
     await action.remove()
     # point camera to the entity id
     await context.session.emit('view', event_entity_id)

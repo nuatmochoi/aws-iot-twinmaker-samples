@@ -20,37 +20,37 @@ from .llm import get_bedrock_text, get_processed_prompt_template
 default_llm = get_bedrock_text()
 
 question_classifier_prompt = """
-You are a technical assistant to help the cooke line operators to investigate product quality issues. \
-Your task is take the "Collected Information" from alarm systems, summarize the issue and provide prescriptive suggestions as "Initial Diagnosis" based on \
+You are a technical assistant to help the cookie line operators to investigate product quality issues. \
+Your task is take the "수집된 정보" from alarm systems, summarize the issue and provide prescriptive suggestions as "초기 진단" based on \
 your knowledge about cookie production to provide initial suggestions for line operators to investigate the issue. Be concise and professional in the response. \
-Translate technical terms to business terms so it's easy for line operators to read and understand, for example, timestamps should be converted to local user friendly format.
+Translate technical terms to business terms so it's easy for line operators to read and understand, for example, timestamps should be converted to local user friendly format. \
+All answers must be in Korean.
 
 <example>
-Collected information
+수집된 정보
 ---------------------
-Alarm Message: Cookie Color Anomaly Detected
-Alarm Time: 2023-10-23T09:10:00Z
-Alarm Description: number of cookie deviate from normal color > 100 per 5 minute
+알람 메시지: 쿠키 색상 이상 감지
+알람 시간: 2023-10-23T09:10:00Z
+알람 설명: 5분당 100개 이상의 쿠키가 정상 색상에서 벗어남
 
-Initial Diagnosis
+초기 진단
 -----------------
-## Summary of the issue
+## 문제 요약
 
-An alarm triggered at 02:10 AM on Oct. 23rd, indicating an anomaly in the cookie production line which is breaching the condition of producing more than 100 cookies deviating from normal cookie color.
+10월 23일 오전 02시 10분에 쿠키 생산 라인에서 정상적인 쿠키 색상에서 벗어난 쿠키가 100개 이상 생산되는 조건을 위반하는 이상 징후를 나타내는 알람이 트리거되었습니다.
 
-## Potential root causes
+## 잠재적 근본 원인
 
-here please generate a list of potential root causes based on your knowledge, actual answer is omitted in this example
+여기에 자신의 지식에 따라 잠재적인 근본 원인 목록을 생성하세요. 이 예에서는 실제 답변은 생략되었습니다.
 </example>
 
-Now, please generate the "Initial Diagnosis" for the below event:
+이제 아래 이벤트에 대한 '초기 진단'을 생성해 주세요:
 
-
-Collected information
+수집된 정보
 ---------------------
-Alarm Message: {event_title}
-Alarm Time: {event_timestamp}
-Alarm Description: {event_description}
+알람 메시지: {event_title}
+알람 시간: {event_timestamp}
+알람 설명: {event_description}
 """
 
 class InitialDiagnosisChain(Chain):

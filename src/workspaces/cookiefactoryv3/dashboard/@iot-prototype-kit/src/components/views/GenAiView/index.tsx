@@ -56,9 +56,9 @@ export function GenAiView({
 
   const eventData = {
     event_id: '98765',
-    event_timestamp: '2021-10-01T00:00:00Z',
-    event_title: 'Cookie Shape Anomaly Detected',
-    event_description: 'number of deformed cookie > 10 per 5 minute',
+    event_timestamp: '2024-06-27T00:00:00Z',
+    event_title: '쿠키 모양 이상 감지',
+    event_description: '5분당 변형된 쿠키 수 10개 초과',
     event_entity_id: 'FREEZER_TUNNEL_e12e0733-f5df-4604-8f10-417f49e6d298'
   };
   const iframeUrl = `${chainlitUrl}?user-data=${encodeURIComponent(JSON.stringify(eventData))}`;
@@ -68,7 +68,7 @@ export function GenAiView({
       {isOpen && (
         <main className={createClassName(styles.root, className)} {...props}>
           <section data-content>
-            <section data-head>Cookie Factory Assistant</section>
+            <section data-head>제과 공장 어시스턴트</section>
             <section>
               <iframe data-iframe ref={iframeRef} src={iframeUrl}></iframe>
             </section>

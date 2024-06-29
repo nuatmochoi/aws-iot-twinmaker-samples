@@ -4,6 +4,7 @@
 import boto3
 
 from langchain.llms.bedrock import Bedrock
+from langchain_aws import ChatBedrock
 from langchain.embeddings.bedrock import BedrockEmbeddings
 
 from botocore.config import Config
@@ -15,12 +16,13 @@ available_models = [
     "anthropic.claude-v2",
     "ai21.j2-ultra",
     "ai21.j2-mid",
-    "anthropic.claude-instant-v1",
-    "anthropic.claude-v1"
+    "anthropic.claude-3-sonnet-20240229-v1:0",
+    "anthropic.claude-v1",
+    "anthropic.claude-3-sonnet-20240229-v1:0"
 ]
 
 # the current model used for text generation
-text_model_id = "anthropic.claude-instant-v1"
+text_model_id = "anthropic.claude-3-sonnet-20240229-v1:0"
 text_v2_model_id = "anthropic.claude-v2"
 embedding_model_id = "amazon.titan-embed-text-v1"
 
@@ -34,8 +36,8 @@ model_kwargs = {
         "temperature": 0.1,
         "top_p": 0.9,
     },
-    "anthropic.claude-instant-v1": {
-        "max_tokens_to_sample": 2048,
+    "anthropic.claude-3-sonnet-20240229-v1:0": {
+        "max_tokens": 2048,
         "temperature": 0.1,
         "top_p": 0.9,
     },
@@ -43,12 +45,12 @@ model_kwargs = {
 
 prompt_template_prefix = {
     "anthropic.claude-v2": "\n\nHuman: ",
-    "anthropic.claude-instant-v1": "\n\nHuman: "
+    "anthropic.claude-3-sonnet-20240229-v1:0": "\n\nHuman: "
 }
 
 prompt_template_postfix = {
     "anthropic.claude-v2": "\n\nAssistant:",
-    "anthropic.claude-instant-v1": "\n\nAssistant:"
+    "anthropic.claude-3-sonnet-20240229-v1:0": "\n\nAssistant:"
 }
 
 def get_template_proc(model_id):
@@ -58,7 +60,7 @@ def get_template_proc(model_id):
 
 prompt_template_procs = {
     "anthropic.claude-v2": get_template_proc("anthropic.claude-v2"),
-    "anthropic.claude-instant-v1": get_template_proc("anthropic.claude-instant-v1")
+    "anthropic.claude-3-sonnet-20240229-v1:0": get_template_proc("anthropic.claude-3-sonnet-20240229-v1:0")
 }
 
 bedrock = boto3.client('bedrock', get_bedrock_region(), config=Config(
@@ -77,7 +79,7 @@ response = bedrock.list_foundation_models()
 print(response.get('modelSummaries')) 
 
 def get_bedrock_text():
-    llm = Bedrock(model_id=text_model_id, client=bedrock_runtime)
+    llm = ChatBedrock(model_id=text_model_id, client=bedrock_runtime)
     llm.model_kwargs = model_kwargs.get(text_model_id, {})
     return llm
 

@@ -338,14 +338,14 @@ export class TmdtApplication extends Construct {
             layers: [
                 new lambdapython.PythonLayerVersion(this, 'opencv_lambda_layer', {
                     entry: path.join(sample_libs_root, 'opencv_utils'),
-                    compatibleRuntimes: [lambda.Runtime.PYTHON_3_10],
+                    compatibleRuntimes: [lambda.Runtime.PYTHON_3_9],
                 }),
             ],
             handler: "handler",
             index: 'data_resource_handler.py',
             memorySize: 256,
             role: iottwinmakerDataCustomResourceLifecycleExecutionRole,
-            runtime: lambda.Runtime.PYTHON_3_10,
+            runtime: lambda.Runtime.PYTHON_3_9,
             timeout: cdk.Duration.minutes(15),
             logRetention: logs.RetentionDays.ONE_DAY,
         });

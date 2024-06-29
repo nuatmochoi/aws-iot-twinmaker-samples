@@ -13,7 +13,7 @@ import { getSiteConfigs } from '@iot-prototype-kit/utils/config';
 
 import styles from './styles.module.css';
 
-const TITLE = 'Choose a location';
+const TITLE = '공장을 선택하세요';
 
 export function SiteSelectorView({ className }: ComponentProps) {
   const { branding } = useStore($appConfig);

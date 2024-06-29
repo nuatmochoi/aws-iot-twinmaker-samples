@@ -100,7 +100,7 @@ export function LineChart({
               maximumFractionDigits: 1
             }).format(value)
         },
-        name: '°F',
+        name: '°C',
         splitLine: {
           lineStyle: {
             color: `rgb(255,255,255,.4)`

@@ -13,7 +13,7 @@ import { authenticateUser, getUserFullName } from '@iot-prototype-kit/utils/user
 
 import styles from './styles.module.css';
 
-const TITLE = 'Choose a role';
+const TITLE = '역할을 선택하세요.';
 let disabled = false;
 
 export function UserSelectorView({ className }: { className?: ClassName }) {

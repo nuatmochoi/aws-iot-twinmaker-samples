@@ -10,7 +10,7 @@ import type { Site } from '@/lib/types';
 
 import styles from './styles.module.css';
 
-const HEAD_LABEL = `Choose a location`;
+const HEAD_LABEL = `공장을 선택하세요`;
 
 export function SiteSelectorView({ className }: { className?: ClassName }) {
   const siteElements = getSites().map((site) => {
