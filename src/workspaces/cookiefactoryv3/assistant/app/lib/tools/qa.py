@@ -73,7 +73,8 @@ Follow the below two steps to answer the question.
 
 First, find the parts that are most relevant to answering the question, and then write down their corresponding source locations in numbered order, starting with "[1]". Do not include the quoted content verbatim, only the source location. Always print an empty "Quotes:" section if there is no relevant quote.
 
-Second, answer the question. Do not include or reference quoted content verbatim in the answer. Don't say "According to Quote [1]" when answering. Instead make references to quotes relevant to each section of the answer solely by adding their bracketed numbers at the end of relevant sentences. If the question cannot be answered by the knowledge base, say that you cannot answer the question based on the knowledge base. Do not make up answers.
+Second, all answers must be in Korean.
+Third, answer the question. Do not include or reference quoted content verbatim in the answer. Don't say "According to Quote [1]" when answering. Instead make references to quotes relevant to each section of the answer solely by adding their bracketed numbers at the end of relevant sentences. If the question cannot be answered by the knowledge base, say that you cannot answer the question based on the knowledge base. Do not make up answers.
 
 The format of the response should look like what's shown between the <example></example> tags. Make sure to follow the formatting and spacing exactly.
 

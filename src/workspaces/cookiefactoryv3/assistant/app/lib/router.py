@@ -21,6 +21,7 @@ from .tools.view import ViewChain
 from .tools.qa import QAChain
 from .tools.graph import GraphChain
 from .tools.general import GeneralChain
+from .tools.obd import OBDChain
 
 from .llm import get_bedrock_text, get_processed_prompt_template
 
@@ -34,6 +35,7 @@ The only valid options are:
 - 3dview: if the instruction is a command about manipulating the 3D viewer
 - doc: if the instruction is a question about standard procedures in the knowledge base
 - graph: if the instruction is a question about finding information of the entities in the factory
+- obd : if the instruction is a question about factory equipment such as temperature, humidity, and rpm, production rate(good products, rejected products, buffered product)
 - general: if none of the above applies
 
 You must give an answer using one of the valid options, and you should write out the answer without further explanation.
@@ -42,6 +44,9 @@ You must give an answer using one of the valid options, and you should write out
 
 Instruction: what is the manufacturer date of the cookie line?
 Answer: graph
+
+Instruction: what is the temperature of cookie former?
+Answer: obd
 
 Instruction: how to operate the cookie line?
 Answer: doc
@@ -235,5 +240,9 @@ def create_routes(memory):
         {
             "name": "graph",
             "chain": GraphChain.create(memory=memory)
+        },
+        {
+            "name": "obd",
+            "chain": OBDChain()
         }
     ]

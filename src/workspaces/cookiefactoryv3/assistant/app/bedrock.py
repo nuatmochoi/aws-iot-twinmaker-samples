@@ -27,6 +27,7 @@ from lib.initial_diagnosis import InitialDiagnosisChain
 print('initializing vector db')
 
 init_db(os.path.join(os.path.dirname(__file__), '..', 'public', './freezer_tunnel_manual.pdf'))
+init_db(os.path.join(os.path.dirname(__file__), '..', 'public', './biscuit_cookie_manual.pdf'))
 
 print('done initializing vector db')
 
@@ -57,7 +58,7 @@ async def start():
   
   if event_id:
     actions = [
-        cl.Action(name="initial_chat_actions", value="initial_diagnosis", label="Run Issue Diagnosis", description="Run Issue Diagnosis"),
+        cl.Action(name="initial_chat_actions", value="initial_diagnosis", label="이슈 진단 실행", description="Run Issue Diagnosis"),
     ]
     message = welcome_message_with_event.format(event_id=event_id)
     await cl.Message(content=message, actions=actions).send()
